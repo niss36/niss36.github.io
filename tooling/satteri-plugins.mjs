@@ -1,4 +1,4 @@
-import { defineHastPlugin } from 'satteri';
+import { defineHastPlugin, defineMdastPlugin } from 'satteri';
 
 export const externalLinks = defineHastPlugin({
   name: 'external-links',
@@ -13,5 +13,17 @@ export const externalLinks = defineHastPlugin({
         ctx.setProperty(node, 'class', 'external');
       }
     },
+  },
+});
+
+export const asides = defineMdastPlugin({
+  name: 'asides',
+  containerDirective(node, ctx) {
+    ctx.replaceNode(node, {
+      type: 'containerDirective',
+      name: node.name,
+      data: { hName: 'aside', hProperties: { className: [node.name] } },
+      children: node.children,
+    });
   },
 });

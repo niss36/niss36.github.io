@@ -4,7 +4,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
-import { externalLinks } from './tooling/satteri-plugins.mjs';
+import { asides, externalLinks } from './tooling/satteri-plugins.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +13,7 @@ export default defineConfig({
   markdown: {
     processor: satteri({
       hastPlugins: [externalLinks],
+      mdastPlugins: [asides],
       features: { directive: true },
     }),
   },
