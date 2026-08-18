@@ -17,6 +17,10 @@ In this series of posts, we'll build a temperature & humidity sensor based on th
 
 ![front and back of the microbit v2](../../assets/blog-01-microbit-features.png)
 
+:::caption
+[Diagram](https://microbit.org/get-started/features/overview/) by the Micro:bit Educational Foundation licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+:::
+
 The `micro:bit` is a board aimed at hobby and educational projects, and it's great for getting started! It's fairly cheap (£15 at time of writing), and it has enough built-in buttons, LEDs, and sensors that you can definitely use it standalone if you don't want to mess with external components and wiring.
 
 Now we've got a board, let's plug it in via USB and watch it power up! We're also going to grab a few tools: we'll use [probe-rs](https://probe.rs/docs/getting-started/installation/) to 'flash' our program (write it to the board's persistent memory). We also need to set up a Rust toolchain for the ARM Cortex chip on the board; running `rustup target add thumbv7em-none-eabihf` will set this up for us.
